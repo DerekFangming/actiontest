@@ -1,0 +1,19 @@
+name: check copyright
+description: 
+
+branding:
+  icon: zap
+  color: gray-dark
+
+inputs:
+  
+runs:
+  using: "composite"
+  steps:
+    - run: python3 -m pip install -qqq --upgrade pip
+      shell: bash
+    - run: python3 -m pip install -qqq PyGithub
+      shell: bash
+    - run: >
+        echo " --- CHECKING COPYRIGHT --- " && $GITHUB_ACTION_PATH/src/check-copyright
+      shell: bash

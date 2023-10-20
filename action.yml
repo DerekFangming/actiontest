@@ -22,5 +22,4 @@ runs:
       shell: bash
       id: step1
     - name: Print changelog
-        run: |
-        echo "${{ steps.step1.outputs.changelog }}"
+      run: echo "${{ steps.step1.outputs.changelog }}"

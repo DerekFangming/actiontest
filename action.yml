@@ -12,6 +12,13 @@ runs:
       shell: bash
     - run: python3 -m pip install -qqq PyGithub
       shell: bash
-    - run: >
-        echo " --- CHECKING COPYRIGHT --- " && $GITHUB_ACTION_PATH/src/check-copyright.py
-      shell: bash
+    - run: |
+        echo " --- CHECKING COPYRIGHT --- "
+        output=$GITHUB_ACTION_PATH/src/check-copyright.py
+        output="${output//'%'/'%25'}"
+        output="${output//$'\n'/'%0A'}"
+        output="${output//$'\r'/'%0D'}" 
+        echo "::set-output name=changelog::$output"
+      id: step1
+    - name: Print changelog
+        run: echo "${{ steps.step1.outputs.changelog }}"

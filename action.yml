@@ -13,5 +13,5 @@ runs:
     - run: python3 -m pip install -qqq PyGithub
       shell: bash
     - run: >
-        echo " --- CHECKING COPYRIGHT --- " && python3 $GITHUB_ACTION_PATH/src/check-copyright.py
+        echo " --- CHECKING COPYRIGHT --- " && $GITHUB_ACTION_PATH/src/check-copyright.py
       shell: bash

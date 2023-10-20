@@ -14,7 +14,7 @@ runs:
       shell: bash
     - run: |
         echo " --- CHECKING COPYRIGHT --- "
-        output=python3 $GITHUB_ACTION_PATH/src/check-copyright.py
+        output="$GITHUB_ACTION_PATH/src/check-copyright.py"
         output="${output//'%'/'%25'}"
         output="${output//$'\n'/'%0A'}"
         output="${output//$'\r'/'%0D'}" 

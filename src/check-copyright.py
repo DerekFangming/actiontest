@@ -9,7 +9,7 @@ from github import Github
 from github import GithubException
 
 def main():
-    print("================================================")
+    print("================================================ ")
     g = Github()
     print("================================================")
     repo = g.get_repo(os.getenv('GITHUB_REPOSITORY'))

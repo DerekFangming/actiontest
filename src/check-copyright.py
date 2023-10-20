@@ -20,3 +20,7 @@ def main():
     pr = repo.get_pull(data['pull_request']['number'])
     for file in pr.get_files():
         print(file.filename + " => " + file.status)
+
+
+if __name__ == "__main__":
+    main()

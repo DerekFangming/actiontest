@@ -20,6 +20,9 @@ def main():
     pr = repo.get_pull(data['pull_request']['number'])
     for file in pr.get_files():
         print(file.filename + " => " + file.status)
+        print("111111111111111111111111111111111111111111111111111")
+        print(repo.get_contents(file.filename))
+        print("222222222222222222222222222222222222222222222222222")
 
 
 if __name__ == "__main__":

@@ -4,8 +4,6 @@ description:
 branding:
   icon: zap
   color: gray-dark
-
-inputs:
   
 runs:
   using: "composite"

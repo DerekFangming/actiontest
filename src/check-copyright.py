@@ -25,7 +25,7 @@ def main():
         print(file.filename + " => " + file.status)
         print("111111111111111111111111111111111111111111111111111")
 #        contents = repo.get_contents(filename, ref=commit.sha).decoded_content
-        print(repo.get_contents(file.filename, ref=head))
+        print(repo.get_contents(file.filename, ref=head).decoded_content)
         print("222222222222222222222222222222222222222222222222222")
 
 

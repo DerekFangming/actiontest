@@ -17,13 +17,15 @@ def main():
         data = json.load(json_file)
 
     pr = repo.get_pull(data['pull_request']['number'])
-    print(json.dumps(data, indent = 4))
+    head = data['pull_request']['head']['ref']
+    print(head)
+#    print(json.dumps(data, indent = 4))
     print("================================================")
     for file in pr.get_files():
         print(file.filename + " => " + file.status)
         print("111111111111111111111111111111111111111111111111111")
         contents = repo.get_contents(filename, ref=commit.sha).decoded_content
-        print(repo.get_contents(file.filename))
+        print(repo.get_contents(file.filename, ref=head))
         print("222222222222222222222222222222222222222222222222222")
 
 
